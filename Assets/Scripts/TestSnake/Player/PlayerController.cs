@@ -18,11 +18,8 @@ namespace TestSnake.Player
 		private void Update()
 		{
 			_controlSnake.Movement.Move(_gameInput.GetMoveDirection());
-		}
-
-		private void FixedUpdate()
-		{
 			_controlSnake.Movement.SnapOnLand();
 		}
+		
 	}
 }
