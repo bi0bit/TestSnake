@@ -67,16 +67,6 @@ namespace TestSnake.Snake.Impl
 					nodeTransform.rotation = alignedRotation * nodeTransform.rotation;
 				}
 			}
-			
-			// var nodeTransform = _body.First().transform;
-			//
-			// var ray = new Ray(nodeTransform.position, nodeTransform.up * -1);
-			//
-			// if (Physics.Raycast(ray, out var hit, int.MaxValue, LayerMaskGame.Map))
-			// {
-			// 	var alignedRotation = Quaternion.FromToRotation(nodeTransform.up, hit.normal);
-			// 	nodeTransform.rotation = alignedRotation * nodeTransform.rotation;
-			// }
 		}
 		
 		
