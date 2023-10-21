@@ -7,6 +7,8 @@ namespace TestSnake.Snake.Impl
 {
 	public class SnakeMovement : IMovement
 	{
+		private const float OFFSET_FROM_LAND = .65f;
+
 		private readonly ISnake _snake;
 		
 		private readonly ICollection<ASnakeNode> _body;
@@ -55,20 +57,18 @@ namespace TestSnake.Snake.Impl
 
 		public void SnapOnLand()
 		{
-			foreach (var nodeBody in _body)
-			{
-				var nodeTransform = nodeBody.transform;
+				var head = _body.First().transform;
 
-				var ray = new Ray(nodeTransform.position, nodeTransform.up * -1);
+				var ray = new Ray(head.position + head.up * 1, head.up * -1);
 
-				if (Physics.Raycast(ray, out var hit, int.MaxValue, LayerMaskGame.Map))
-				{
-					var alignedRotation = Quaternion.FromToRotation(nodeTransform.up, hit.normal);
-					nodeTransform.rotation = alignedRotation * nodeTransform.rotation;
-				}
-			}
+				if (!Physics.Raycast(ray, out var hit, int.MaxValue, LayerMaskGame.Map)) return;
+				
+				head.position = hit.point + head.up * OFFSET_FROM_LAND;
+
+				var alignedRotation = Quaternion.FromToRotation(head.up, hit.normal);
+				head.rotation = alignedRotation * head.rotation;
+				
 		}
-		
-		
+
 	}
 }
