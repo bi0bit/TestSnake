@@ -17,7 +17,6 @@ namespace TestSnake.Player
 
 		private void Update()
 		{
-			_controlSnake.Movement.SnapOnLand();
 			_controlSnake.Movement.Move(_gameInput.GetMoveDirection());
 		}
 		

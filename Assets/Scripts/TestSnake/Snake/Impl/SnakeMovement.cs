@@ -26,6 +26,8 @@ namespace TestSnake.Snake.Impl
 			MoveHead(moveDirection, head);
 			
 			MoveTail(head);
+			
+			SnapOnLand();
 		}
 
 		private void MoveHead(Vector2 moveDirection, ASnakeNode head)
