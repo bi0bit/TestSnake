@@ -33,15 +33,15 @@ namespace TestSnake.Snake.Impl
 
 		private void Awake()
 		{
+			_body.AddFirst(_head);
+			
+			InitBodyLength();
+			
 			InitMovement();
 			
 			InitEater();
 			
 			_head.OnTriggerEnterNode.AddListener(OnTriggerEnterHead);
-
-			_body.AddFirst(_head);
-			
-			InitBodyLength();
 		}
 
 		private void InitMovement()
