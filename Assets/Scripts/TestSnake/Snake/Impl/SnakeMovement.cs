@@ -31,7 +31,7 @@ namespace TestSnake.Snake.Impl
 		private void MoveHead(Vector2 moveDirection, ASnakeNode head)
 		{
 			head.transform.Rotate(Vector3.up, moveDirection.x * _snake.Data.TurnSpeed * Time.deltaTime);
-			head.transform.position += head.transform.forward * _snake.Data.MoveSpead * Time.deltaTime;
+			head.transform.position += head.transform.forward * _snake.Data.MoveSpeed * Time.deltaTime;
 		}
 
 		private void MoveTail(ASnakeNode head)

@@ -6,7 +6,7 @@ namespace TestSnake.Snake.Data
 	public class SnakeParameters : ScriptableObject
 	{
 		
-		[field: SerializeField] public float MoveSpead { get; private set; }
+		[field: SerializeField] public float MoveSpeed { get; private set; }
 		
 		[field: SerializeField] public float BodySpeed { get; private set; }
 		

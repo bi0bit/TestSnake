@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e3e3ac222a4d01bfd076db55956f22, type: 3}
   m_Name: SnakeParameters
   m_EditorClassIdentifier: 
-  <MoveSpead>k__BackingField: 7
+  <MoveSpeed>k__BackingField: 7
   <BodySpeed>k__BackingField: 7
   <TurnSpeed>k__BackingField: 420
   <BodySpace>k__BackingField: 1.45
