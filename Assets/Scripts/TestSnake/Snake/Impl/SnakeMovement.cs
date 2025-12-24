@@ -23,11 +23,11 @@ namespace TestSnake.Snake.Impl
 		{
 			var head = _body.First();
 			
+			SnapOnLand();
+			
 			MoveHead(moveDirection, head);
 			
 			MoveTail(head);
-			
-			SnapOnLand();
 		}
 
 		private void MoveHead(Vector2 moveDirection, ASnakeNode head)
@@ -57,7 +57,7 @@ namespace TestSnake.Snake.Impl
 			}
 		}
 
-		public void SnapOnLand()
+		private void SnapOnLand()
 		{
 				var head = _body.First().transform;
 
