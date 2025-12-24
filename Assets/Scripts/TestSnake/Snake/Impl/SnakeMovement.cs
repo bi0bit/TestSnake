@@ -68,8 +68,8 @@ namespace TestSnake.Snake.Impl
 				head.position = hit.point + head.up * OFFSET_FROM_LAND;
 
 				var alignedRotation = Quaternion.FromToRotation(head.up, hit.normal);
-				head.rotation = alignedRotation * head.rotation;
-				
+				var targetRotation = alignedRotation * head.rotation;
+				head.rotation = Quaternion.Slerp(head.rotation, targetRotation, Time.deltaTime * 8f);
 		}
 
 	}
